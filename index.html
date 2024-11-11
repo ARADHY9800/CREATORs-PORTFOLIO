@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Portfolio</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Smooth animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ddd;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 50px;
+            background-color: #444;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .header .name {
+            color: red; /* Set the name color to red */
+        }
+
+        .header p {
+            font-size: 1.2em;
+        }
+
+        /* About Section */
+        .about {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1em;
+            max-width: 600px;
+            margin: auto;
+            color: #555;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 50px;
+            background-color: #eee;
+            text-align: center;
+        }
+
+        .portfolio h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .portfolio-item {
+            background-color: #fff;
+            margin: 10px;
+            width: 300px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .portfolio-item h3 {
+            font-size: 1.5em;
+            margin-top: 15px;
+        }
+
+        .portfolio-item p {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .project-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .project-btn:hover {
+            background-color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://example.com" target="_blank">Other Website</a></li> <!-- Added "Other Website" link -->
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="header fade-in" id="home">
+        <h1>Hi, I'm <span class="name">Aradhy Dubey</span></h1>
+        <h2>           I'm a       </h2>
+        <p>passionate about creating beautiful web application and proffesional desighn that inspire and captivate.</p>
+    </div>
+
+    <!-- About Section -->
+    <div class="about fade-in" id="about">
+        <h2>About Me</h2>
+        <p>Hi! I'm a passionate web developer with a love for creating beautiful and functional websites. I specialize in front-end development, bringing designs to life with HTML, CSS, and JavaScript.</p>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div class="portfolio fade-in" id="portfolio">
+        <h2>My Projects</h2>
+        <div class="portfolio-items">
+            <div class="portfolio-item">
+                <img src="https://i.imgur.com/lBG2veM.png" alt="Project 1">
+                <h3>PROJECT 1</h3>
+                <p>A WEBSITE MADE FOR MY OFFICIAL BRAND BY ME.SKULL-CHUNKS.</p>
+                <a href="https://aradhy9800.github.io/SKULL-CHUNKS/" class="project-btn">View Project</a>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://i.imgur.com/RG7qzVQ.png" alt="Project 2">
+                <h3>PROJECT 2</h3>
+                <p>A WEBSITE MADE FOR MY OFFICIAL BRAND BY ME.SKULL-CHUNKS-WEB-SERVICES.</p>
+                <a href="https://aradhy9800.github.io/SKULL-CHUNKS-WEBSITE-SERVICES/" class="project-btn">View Project</a>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://i.imgur.com/J37sfu9.png" alt="Project 3">
+                <h3>PROJECT 3</h3>
+                <p>A PORTFOLIO WEBSITE MADE BY ME FOR OUR CLINET.</p>
+                <a href="http://shaurya-fatania.github.io/home" class="project-btn">View Project</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <a href="mailto:skullchunks@gmail.com" class="button">Email Us</a>
+    </section>
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
+
+    <!-- JavaScript for Smooth Scroll and Animation Triggering -->
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Trigger animations on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const options = { threshold: 0.5 };
+
+        const fadeInOnScroll = new IntersectionObserver((entries, fadeInOnScroll) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    fadeInOnScroll.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        fadeElements.forEach(element => {
+            fadeInOnScroll.observe(element);
+        });
+    </script>
+
+</body>
+</html>
