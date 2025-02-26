@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Aradhy Dubey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://i.postimg.cc/s2qH5LWr/cherry-blossom-in-lava-p8cc9zmjtwvlmuvy.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+        }
+        h2 {
+            margin: 20px 0;
+        }
+        .section {
+            position: relative;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            scroll-behavior: smooth;
+        }
+        .project-item {
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            transition: transform 0.3s ease-in-out;
+        }
+        .project-item:hover {
+            transform: scale(1.05);
+        }
+        .project-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .project-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            transition: color 0.3s;
+        }
+        .project-item a:hover {
+            color: #ffcc00;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .arrow.left {
+            left: 0;
+        }
+        .arrow.right {
+            right: 0;
+        }
+        .home-button {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .home-button:hover {
+            background: #ffcc00;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-button">Home</a>
+    <div class="container">
+        <h2>Website Projects</h2>
+        <div class="section" id="website-section">
+            <span class="arrow left" onclick="scrollLeft('website-section')">&#9664;</span>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300" alt="Website 1">
+                <a href="#" target="_blank">Custom eCommerce design</a>
+            </div>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300" alt="Website 2">
+                <a href="#" target="_blank">Portfolio showcase</a>
+            </div>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300" alt="Website 3">
+                <a href="#" target="_blank">Business landing page</a>
+            </div>
+            <span class="arrow right" onclick="scrollRight('website-section')">&#9654;</span>
+        </div>
+
+        <h2>Video Editing Projects</h2>
+        <div class="section" id="video-section">
+            <span class="arrow left" onclick="scrollLeft('video-section')">&#9664;</span>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300" alt="Video 1">
+                <a href="#" target="_blank">Promo video for a brand</a>
+            </div>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300" alt="Video 2">
+                <a href="#" target="_blank">YouTube intro animation</a>
+            </div>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300" alt="Video 3">
+                <a href="#" target="_blank">Social media ad</a>
+            </div>
+            <span class="arrow right" onclick="scrollRight('video-section')">&#9654;</span>
+        </div>
+
+        <h2>Graphic Designing Projects</h2>
+        <div class="section" id="graphic-section">
+            <span class="arrow left" onclick="scrollLeft('graphic-section')">&#9664;</span>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300" alt="Design 1">
+                <a href="#" target="_blank">Logo for a startup</a>
+            </div>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300" alt="Design 2">
+                <a href="#" target="_blank">Event poster</a>
+            </div>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300" alt="Design 3">
+                <a href="#" target="_blank">Social media banner</a>
+            </div>
+            <span class="arrow right" onclick="scrollRight('graphic-section')">&#9654;</span>
+        </div>
+    </div>
+
+    <div class="footer">Thanks for visiting my portfolio 😊</div>
+
+    <script>
+        function scrollLeft(sectionId) {
+            document.getElementById(sectionId).scrollBy({ left: -350, behavior: 'smooth' });
+        }
+        function scrollRight(sectionId) {
+            document.getElementById(sectionId).scrollBy({ left: 350, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
