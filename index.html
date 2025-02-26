@@ -3,265 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Portfolio</title>
+    <title>Modern Transparent Portfolio</title>
     <style>
-        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            background: url('https://i.postimg.cc/s2qH5LWr/cherry-blossom-in-lava-p8cc9zmjtwvlmuvy.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
             overflow-x: hidden;
         }
-
-        /* Smooth animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s ease forwards;
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
         }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Navigation Bar */
         nav {
-            background-color: #333;
-            color: #fff;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.1);
             padding: 15px;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
         nav ul {
             list-style: none;
+            display: flex;
         }
-
         nav ul li {
-            display: inline;
-            margin: 0 10px;
+            margin: 0 15px;
         }
-
         nav ul li a {
-            color: #fff;
+            color: white;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
         }
-
         nav ul li a:hover {
-            color: #ddd;
+            color: #ffcccb;
         }
-
-        /* Header Section */
-        .header {
-            text-align: center;
-            padding: 50px;
-            background-color: #444;
+        .menu-button {
+            cursor: pointer;
+            font-size: 24px;
             color: white;
         }
-
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        .header .name {
-            color: red; /* Set the name color to red */
-        }
-
-        .header p {
-            font-size: 1.2em;
-        }
-
-        /* About Section */
-        .about {
-            padding: 50px;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            font-size: 1em;
-            max-width: 600px;
-            margin: auto;
-            color: #555;
-        }
-
-        /* Portfolio Section */
-        .portfolio {
-            padding: 50px;
-            background-color: #eee;
-            text-align: center;
-        }
-
-        .portfolio h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .portfolio-items {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .portfolio-item {
-            background-color: #fff;
-            margin: 10px;
-            width: 300px;
-            padding: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .portfolio-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .portfolio-item h3 {
-            font-size: 1.5em;
-            margin-top: 15px;
-        }
-
-        .portfolio-item p {
-            font-size: 0.9em;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .project-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            text-decoration: none;
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
             border-radius: 5px;
-            transition: background-color 0.3s;
         }
-
-        .project-btn:hover {
-            background-color: #555;
+        .dropdown a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 5px 0;
         }
-
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: #fff;
+        .dropdown a:hover {
+            color: #ffcccb;
+        }
+        .header {
+            margin-top: 100px;
+            padding: 50px;
+        }
+        .typing-text {
+            font-size: 3em;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid white;
+            animation: typing 3s steps(20, end) infinite, blink 0.5s step-end infinite alternate;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        .about {
+            margin: 50px;
+            padding: 30px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            animation: fly 3s ease-in-out infinite alternate;
+            transition: transform 0.3s ease-in-out;
+        }
+        @keyframes fly {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+        .about:hover {
+            transform: scale(1.05);
+        }
+        .contact-btn {
+            display: inline-block;
+            background: white;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .footer {
+            background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             text-align: center;
-            margin-top: 20px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer a:hover {
+            color: #ffcccb;
         }
     </style>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-    </nav>
-
-    <!-- Header Section -->
-    <div class="header fade-in" id="home">
-        <h1>Hi, I'm <span class="name">Aradhy Dubey</span></h1>
-        <h2>           I'm a       </h2>
-        <p>passionate about creating beautiful web application and proffesional desighn that inspire and captivate.</p>
-    </div>
-
-    <!-- About Section -->
-    <div class="about fade-in" id="about">
-        <h2>About Me</h2>
-        <p>Hi! I'm a passionate web developer with a love for creating beautiful and functional websites. I specialize in front-end development, bringing designs to life with HTML, CSS, and JavaScript.</p>
-    </div>
-
-    <!-- Portfolio Section -->
-    <div class="portfolio fade-in" id="portfolio">
-        <h2>My Projects</h2>
-        <div class="portfolio-items">
-            <div class="portfolio-item">
-                <img src="https://i.postimg.cc/Gmww9jJd/Screenshot-2024-11-21-155910.png" alt="Project 1">
-                <h3>PROJECT 1</h3>
-                <p>A WEBSITE MADE FOR MY OFFICIAL BRAND BY ME.SKULL-CHUNKS.</p>
-                <a href="https://aradhy9800.github.io/SKULL-CHUNKS/" class="project-btn">View Project</a>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://i.postimg.cc/QNyfdxk3/Screenshot-2024-11-21-154339.png" alt="Project 2">
-                <h3>PROJECT 2</h3>
-                <p>A WEBSITE MADE FOR MY OFFICIAL BRAND BY ME.SKULL-CHUNKS-WEB-SERVICES.</p>
-                <a href="https://aradhy9800.github.io/SKULL-CHUNKS-WEBSITE-SERVICES/" class="project-btn">View Project</a>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://i.postimg.cc/x1f47F9x/Screenshot-2024-11-21-161730.png" alt="Project 3">
-                <h3>PROJECT 3</h3>
-                <p>A BUISNESS WEBSITE MADE BY ME FOR OUR CLINET.</p>
-                <a href="https://aradhy9800.github.io/HANOVER-PACKER-AND-MOVERS/" class="project-btn">View Project</a>
-            </div>
+        <div class="menu-button" onclick="toggleDropdown()">☰</div>
+        <div class="dropdown" id="dropdownMenu">
+            <a href="project.html">Projects</a>
         </div>
+    </nav>
+    <div class="container">
+        <section class="header" id="home">
+            <h1 class="typing-text">Hi, I'm Aradhy Dubey</h1>
+            <p>Creating stunning web experiences with a transparent and modern design.</p>
+        </section>
+       <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>
+        I am Aradhy Dubey, a passionate web designer and developer dedicated to creating visually stunning and interactive web experiences.
+        With expertise in modern UI/UX design, I focus on delivering responsive, transparent, and sleek website designs that leave a lasting impression.
+    </p>
+    <p>
+        Apart from web development, I specialize in <strong>video editing</strong> and <strong>graphic designing</strong>. My video editing skills allow me to craft engaging and 
+        high-quality content with smooth transitions, effects, and animations, making videos more captivating. In graphic design, I work on 
+        creating unique brand logos, banners, and social media content, ensuring every design is professional and appealing.
+    </p>
+    <p>
+        My goal is to merge creativity with functionality, ensuring that every website, design, or video I create stands out and delivers an 
+        excellent user experience.
+    </p>
+</section>
+
+        <section class="contact" id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: skullchunksofficial@gmail.com</p>
+            <a href="mailto:skullchunksofficial@gmail.com" class="contact-btn">Contact Us</a>
+        </section>
     </div>
-
-    <!-- Footer Section -->
-    <footer id="contact">
-        <h2>Contact Us</h2>
-        <a href="mailto:skullchunksofficial@gmail.com" class="button">Email Us</a>
-    </section>
-        <p>&copy; 2024 My Portfolio</p>
+    <footer class="footer">
+        <p>&copy; 2024 Aradhy Dubey</p>
+        <a href="https://aradhy9800.github.io/SKULL-CHUNKS/">My Brand</a>
     </footer>
-
-    <!-- JavaScript for Smooth Scroll and Animation Triggering -->
     <script>
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Trigger animations on scroll
-        const fadeElements = document.querySelectorAll('.fade-in');
-        const options = { threshold: 0.5 };
-
-        const fadeInOnScroll = new IntersectionObserver((entries, fadeInOnScroll) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('appear');
-                    fadeInOnScroll.unobserve(entry.target);
-                }
-            });
-        }, options);
-
-        fadeElements.forEach(element => {
-            fadeInOnScroll.observe(element);
-        });
+        function toggleDropdown() {
+            var dropdown = document.getElementById("dropdownMenu");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
     </script>
-
 </body>
 </html>
